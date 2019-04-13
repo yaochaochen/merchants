@@ -1,4 +1,4 @@
-package com.imooc.passbook.merchants.constans;
+package com.passbook.merchants.constans;
 
 /**
  * 错误码枚举定义

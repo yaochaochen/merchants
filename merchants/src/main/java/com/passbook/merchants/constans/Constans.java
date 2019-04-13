@@ -1,4 +1,4 @@
-package com.imooc.passbook.merchants.constans;
+package com.passbook.merchants.constans;
 
 /**
  * <h1>普通（统一）常量</h1>

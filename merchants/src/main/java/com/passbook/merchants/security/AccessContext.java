@@ -1,4 +1,4 @@
-package com.imooc.passbook.merchants.security;
+package com.passbook.merchants.security;
 
 /**
  * <h1>单独存储每个线程的token信息</h1>

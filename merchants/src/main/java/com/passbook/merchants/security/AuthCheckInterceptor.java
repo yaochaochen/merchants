@@ -1,6 +1,6 @@
-package com.imooc.passbook.merchants.security;
+package com.passbook.merchants.security;
 
-import com.imooc.passbook.merchants.constans.Constans;
+import com.passbook.merchants.constans.Constans;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

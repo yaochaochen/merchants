@@ -1,4 +1,4 @@
-package com.imooc.passbook.merchants.constans;
+package com.passbook.merchants.constans;
 
 /**
  * <h1>优惠券颜色</h1>
