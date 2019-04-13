@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ImmockMerchants
+  datasoucre:
+    url: jdbc:mysql://127.0.0.1:3306/passbook
+    user: ycc
+    password: 123456
+   kafka:
+     bootstarp-servers: 127.0.0.1:9092
+     consumer:
+       group-id: passbook
+     listener:
+       concurrency: 4
+ server:
+   port: 9527
+ log:
+   level: debug
+   file: immoc-menchants.log
