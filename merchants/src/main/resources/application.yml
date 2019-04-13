@@ -2,9 +2,9 @@ spring:
   application:
     name: ImoocMerchants
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/passbook?autoReconnect=true
+    url: jdbc:mysql://123.56.22.81:3306/passbook?autoReconnect=true
     username: root
-    password:
+    password: 123456
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     consumer:
