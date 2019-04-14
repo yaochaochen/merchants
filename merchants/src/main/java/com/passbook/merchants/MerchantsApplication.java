@@ -20,7 +20,7 @@ public class MerchantsApplication extends WebMvcConfigurerAdapter {
     }
 
     /**
-     * 重载拦截器 拦截自定义Contr
+     * 重载拦截器 拦截自定义Controller
      * @param registry
      */
     @Override
