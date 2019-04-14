@@ -2,7 +2,7 @@ spring:
   application:
     name: ImoocMerchants
   datasource:
-    url: jdbc:mysql://123.56.22.81:3306/passbook?autoReconnect=true&charset=utf-8
+    url: jdbc:mysql://123.56.22.81:3306/passbook?autoReconnect=true&characterEncoding=utf8
     username: root
     password: 123456
   kafka:

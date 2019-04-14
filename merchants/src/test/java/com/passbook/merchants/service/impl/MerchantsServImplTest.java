@@ -31,5 +31,10 @@ public class MerchantsServImplTest {
         merchantsServ.createMerchants(request);
         log.info(JSON.toJSONString(request));
     }
+    @Test
+    public void buildMerchants() {
+        log.info(JSON.toJSONString(merchantsServ.buildMerchantsInfoById(17)));
+        
+    }
 
 }

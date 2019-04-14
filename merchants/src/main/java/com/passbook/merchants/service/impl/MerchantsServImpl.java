@@ -2,6 +2,7 @@ package com.passbook.merchants.service.impl;
 
 import com.passbook.merchants.constans.ErrorCode;
 import com.passbook.merchants.dao.MerchantsDao;
+import com.passbook.merchants.entity.Merchants;
 import com.passbook.merchants.service.IMerchantsServ;
 import com.passbook.merchants.vo.CreateMerchantsRequest;
 import com.passbook.merchants.vo.CreateMerchantsResponse;
@@ -54,7 +55,15 @@ public class MerchantsServImpl implements IMerchantsServ {
 
     @Override
     public Response buildMerchantsInfoById(Integer id) {
-        return null;
+        
+        Response response = new Response();
+        Merchants merchants = merchantsDao.findById(id);
+        if (null == merchants) {
+            response.setErrorCode(ErrorCode.MECHANTS_NOT_EXIST.getCode());
+            response.setErrorMsg(ErrorCode.MECHANTS_NOT_EXIST.getDesc());
+        }
+        response.setData(merchants);
+        return response;
     }
 
     @Override
