@@ -1,5 +1,7 @@
 package com.passbook.merchants.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.passbook.merchants.constans.Constans;
 import com.passbook.merchants.constans.ErrorCode;
 import com.passbook.merchants.dao.MerchantsDao;
 import com.passbook.merchants.entity.Merchants;
@@ -10,6 +12,7 @@ import com.passbook.merchants.vo.PassTemplate;
 import com.passbook.merchants.vo.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -25,10 +28,13 @@ import javax.transaction.Transactional;
 public class MerchantsServImpl implements IMerchantsServ {
     
     private final MerchantsDao merchantsDao;
+    
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Autowired
-    public MerchantsServImpl(MerchantsDao merchantsDao) {
+    public MerchantsServImpl(MerchantsDao merchantsDao, KafkaTemplate<String, String> kafkaTemplate) {
         this.merchantsDao = merchantsDao;
+        this.kafkaTemplate = kafkaTemplate;
     }
 
     @Override
@@ -68,6 +74,24 @@ public class MerchantsServImpl implements IMerchantsServ {
 
     @Override
     public Response dropPassTemplate(PassTemplate template) {
-        return null;
+        
+        Response response = new Response();
+        ErrorCode errorCode = template.validate(merchantsDao);
+        if (errorCode != ErrorCode.SUCCESS) {
+            response.setErrorCode(errorCode.getCode());
+            response.setErrorMsg(errorCode.getDesc());
+        } else {
+            
+            String passTemplate = JSON.toJSONString(template);
+            kafkaTemplate.send(
+                    Constans.TEMPLATE_TOPIC,
+                    Constans.TEMPLATE_TOPIC,
+                    passTemplate
+            );
+            log.info("dropPassTemplate :{}", passTemplate);
+             
+        }
+        
+        return response;
     }
 }
