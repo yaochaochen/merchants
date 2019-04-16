@@ -17,9 +17,10 @@ public class Constants {
     
     /**token名前缀*/
     public static final String USED_TOKEN_SUFFIX = "_";
+    public static  final String USE_COUNT_REDIS_KEY = "user_id_%";
     
     
-    public class  UserTabale {
+    public class  UserTable {
         
         /**Hb表名*/
         public static final String TABLE_NAME = "pb:user";
