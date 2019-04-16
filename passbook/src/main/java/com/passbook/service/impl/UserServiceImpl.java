@@ -71,7 +71,7 @@ public class UserServiceImpl implements IUserService {
 
         hbaseTemplate.saveOrUpdates(Constants.UserTable.TABLE_NAME, datas);
 
-        user.setId(userId);
+        user.setId(userId);  
 
         return new Response(user);
         
