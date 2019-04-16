@@ -18,4 +18,11 @@ public class PassInfo {
 
     /** 优惠券对应的商户 */
     private Merchants merchants;
+
+     public PassInfo(Pass pass, PassTemplate passTemplate, Merchants merchants) {
+
+         this.pass =pass;
+         this.passTemplate = passTemplate;
+         this.merchants = merchants;
+     }
 }
