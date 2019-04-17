@@ -35,7 +35,7 @@ public class ConsumePassTemplate {
             @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition, 
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic ) {
 
-        log.info("Consumer Receive PassTempalte {}", passTemplate);
+        log.info("Consumer Receive PassTemplate {}", passTemplate);
 
         PassTemplate pt = new PassTemplate();
         try {
