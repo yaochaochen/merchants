@@ -9,7 +9,7 @@ import org.apache.hadoop.hbase.util.Bytes;
 
 /**
  * <h1>Feedback HBase Row To Object</h1>
- * Created by Qinyi.
+ *
  */
 public class FeedbackRowMapper implements RowMapper<Feedback> {
 
