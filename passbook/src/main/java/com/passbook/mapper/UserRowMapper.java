@@ -14,19 +14,19 @@ import org.apache.hadoop.hbase.util.Bytes;
  **/
 public class UserRowMapper implements RowMapper<User> {
     
-   private static byte[] FAMILY_B = Constants.UserTabale.FAMILY_B.getBytes();
+   private static byte[] FAMILY_B = Constants.UserTable.FAMILY_B.getBytes();
    
-   private static byte[] NAME = Constants.UserTabale.NAME.getBytes();
+   private static byte[] NAME = Constants.UserTable.NAME.getBytes();
    
-   private static byte[] AGE = Constants.UserTabale.AGE.getBytes();
+   private static byte[] AGE = Constants.UserTable.AGE.getBytes();
    
-   private static byte[] SEX = Constants.UserTabale.SEX.getBytes();
+   private static byte[] SEX = Constants.UserTable.SEX.getBytes();
    
-   private static byte[] FAMILY_O = Constants.UserTabale.FAMILY_O.getBytes();
+   private static byte[] FAMILY_O = Constants.UserTable.FAMILY_O.getBytes();
    
-   private static byte[] PHONE = Constants.UserTabale.PHONE.getBytes();
+   private static byte[] PHONE = Constants.UserTable.PHONE.getBytes();
    
-   private static byte[] ADDRESS = Constants.UserTabale.ADDRESS.getBytes();
+   private static byte[] ADDRESS = Constants.UserTable.ADDRESS.getBytes();
    
    
 
